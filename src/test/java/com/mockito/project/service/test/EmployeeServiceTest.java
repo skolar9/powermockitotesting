@@ -1,5 +1,8 @@
 package com.mockito.project.service.test;
 
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -38,6 +41,7 @@ public class EmployeeServiceTest{
 	        final EmployeeDto employeeDto = spiedEmpService.fetchEmployee(employee);
 	        Assert.assertNotNull(employeeDto);
 	        Assert.assertEquals("DM", employeeDto.getInitials());
+	        verify(spiedEmpService, times(1)).fetchEmployee(employee);
 	    }
 
 	    @Test
@@ -50,6 +54,7 @@ public class EmployeeServiceTest{
 	        final EmployeeDto employeeDto = employeeService.fetchEmployeeStatically(employee);
 	        Assert.assertNotNull(employeeDto);
 	        Assert.assertEquals("DM", employeeDto.getInitials());
+	      
 	    }
 
 }
