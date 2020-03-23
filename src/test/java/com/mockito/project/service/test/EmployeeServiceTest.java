@@ -20,7 +20,8 @@ import com.mockito.project.service.EmployeeUtils;
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({EmployeeService.class, EmployeeUtils.class})
 public class EmployeeServiceTest{
-	 	@InjectMocks
+	 	
+		@InjectMocks
 	    private EmployeeService employeeService;
 
 	 	@Test
